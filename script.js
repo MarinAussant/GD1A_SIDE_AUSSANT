@@ -16,6 +16,7 @@ function preload(){
 
     this.load.image("Phaser_tuilesdejeu","assets/tileset.png");
     this.load.tilemapTiledJSON("carte","assets/niveauJson.json")
+    this.load.image('ground', 'assets/platform.png');
 
     this.load.spritesheet('perso','assets/perso.png',
     { frameWidth: 32, frameHeight: 48 });
@@ -92,6 +93,8 @@ function create(){
     );
 
     // Collision des plateformes
+    platforms = this.physics.add.staticGroup();
+    platforms.create(400, 568, 'ground').setScale(2).refreshBody();
     calque_plateformes.setCollisionByProperty({ estSolide: true }); 
 
     // Affiche un texte à l’écran, pour le score
@@ -109,6 +112,7 @@ function create(){
 
     // Faire en sorte que le joueur collide avec les platformes
     this.physics.add.collider(player, calque_plateformes);
+    this.physics.add.collider(player, platforms);
 
 
     this.anims.create({
@@ -149,7 +153,7 @@ function update(){
         player.setVelocityX(0); //vitesse nulle
         player.anims.play('turn'); //animation fait face caméra
     }
-    if (cursors.up.isDown /*&& player.body.touching.down*/){
+    if (cursors.up.isDown && player.body.touching.down){
         //si touche haut appuyée ET que le perso touche le sol
         player.setVelocityY(-625); //alors vitesse verticale négative
         //(on saute)
