@@ -14,16 +14,17 @@ new Phaser.Game(config);
 
 function preload(){
 
-    this.load.image("Phaser_tuilesdejeu","assets/tileset.png");
+    this.load.image("Phaser_tuilesdejeu","assets/images/tileset.png");
+    this.load.image('background',"assets/images/BackgroundSansPlateforme.png")
     this.load.tilemapTiledJSON("carte","assets/niveauJson.json")
-    this.load.image('ground', 'assets/platform.png');
+    this.load.image('forground',"assets/images/ForgroundSansPlateform.png")
+    this.load.image('sunLight',"assets/images/LightSun.png")
 
-    this.load.spritesheet('perso','assets/perso.png',
+    this.load.spritesheet('perso','assets/images/perso.png',
     { frameWidth: 32, frameHeight: 48 });
 }
 
 var platforms;
-var movablePlatforms
 
 var player;
 var cursors;
@@ -45,15 +46,31 @@ function create(){
         "Phaser_tuilesdejeu"
     );
     
-    // Chargement des calques
-    
-    calque_structure = carteDuNiveau.createLayer(
-        "Structure",
+    // Chargement des calques et des images
+
+    this.add.image(0,0,'background').setOrigin(0,0);
+
+    calque_plateformes = carteDuNiveau.createLayer(
+        "Plateformes",
         tileset
     );
 
-    calque_nuages_transparent = carteDuNiveau.createLayer(
-        "Nuages Transparents",
+        //create player
+    player = this.physics.add.sprite(100, 450, 'perso');
+    //player.setBounce(0.2);
+
+    calque_murs = carteDuNiveau.createLayer(
+        "Murs Accrochable / Cotes Nuages",
+        tileset
+    );
+
+    calque_piques = carteDuNiveau.createLayer(
+        "Piques",
+        tileset
+    );
+
+    calque_collectible = carteDuNiveau.createLayer(
+        "Collectible",
         tileset
     );
 
@@ -72,29 +89,21 @@ function create(){
         tileset
     );
 
-    calque_collectible = carteDuNiveau.createLayer(
-        "Collectible",
+    calque_nuages_transparent = carteDuNiveau.createLayer(
+        "Nuages Transparents",
         tileset
     );
 
-    calque_piques = carteDuNiveau.createLayer(
-        "Piques",
+    (this.add.image(0,0,'forground').setOrigin(0,0)).alpha = 0.22;
+
+    calque_structure = carteDuNiveau.createLayer(
+        "Structure",
         tileset
     );
 
-    calque_murs = carteDuNiveau.createLayer(
-        "Murs Accrochable / Cotes Nuages",
-        tileset
-    );
-
-    calque_plateformes = carteDuNiveau.createLayer(
-        "Plateformes",
-        tileset
-    );
+    (this.add.image(0,0,'sunLight').setOrigin(0,0)).alpha = 0.17;
 
     // Collision des plateformes
-    platforms = this.physics.add.staticGroup();
-    platforms.create(400, 568, 'ground').setScale(2).refreshBody();
     calque_plateformes.setCollisionByProperty({ estSolide: true }); 
 
     // Affiche un texte à l’écran, pour le score
@@ -103,17 +112,11 @@ function create(){
     // Création de la détéction du clavier
     cursors = this.input.keyboard.createCursorKeys();
 
-    // Création du joueur
-    player = this.physics.add.sprite(100, 450, 'perso');
-    player.setBounce(0.2);
-
     // Faire en sorte que le joueur collide avec les bords du monde
     player.setCollideWorldBounds(true);
 
     // Faire en sorte que le joueur collide avec les platformes
     this.physics.add.collider(player, calque_plateformes);
-    this.physics.add.collider(player, platforms);
-
 
     this.anims.create({
         key: 'left',
@@ -153,11 +156,13 @@ function update(){
         player.setVelocityX(0); //vitesse nulle
         player.anims.play('turn'); //animation fait face caméra
     }
-    if (cursors.up.isDown && player.body.touching.down){
+    if (cursors.up.isDown && (player.body.blocked.down || player.body.blocked.right || player.body.blocked.left)){
         //si touche haut appuyée ET que le perso touche le sol
-        player.setVelocityY(-625); //alors vitesse verticale négative
+        player.setVelocityY(-375); //alors vitesse verticale négative
         //(on saute)
     }
+
+    console.log(player.body.blocked.right)
 }
 
     
