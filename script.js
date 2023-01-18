@@ -28,14 +28,18 @@ var platforms;
 
 var player;
 var cursors;
-var stars;
+var cameras;
 var score = 0;
 var scoreText;
-var bombs;
+
 var gameOver = false;
-var round = 1; 
+
 
 function create(){
+
+    //Caméra 
+
+    cameras = this.cameras.main.setSize(600, 450);
 
     // Chargement de la carte 
     carteDuNiveau = this.add.tilemap("carte");
@@ -57,6 +61,11 @@ function create(){
 
         //create player
     player = this.physics.add.sprite(100, 450, 'perso');
+
+
+    cameras.startFollow(player);
+    cameras.setDeadzone(100,100);
+    cameras.setBounds(0,0,1600,1600);
     //player.setBounce(0.2);
 
     calque_murs = carteDuNiveau.createLayer(
