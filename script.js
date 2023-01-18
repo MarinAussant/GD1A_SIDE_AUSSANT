@@ -162,7 +162,6 @@ function update(){
         //(on saute)
     }
 
-    console.log(player.body.blocked.right)
 }
 
     
