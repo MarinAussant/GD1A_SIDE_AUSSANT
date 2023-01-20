@@ -39,7 +39,7 @@ function create(){
 
     //Caméra 
 
-    cameras = this.cameras.main.setSize(600, 450);
+    cameras = this.cameras.main.setSize(800, 600);
 
     // Chargement de la carte 
     carteDuNiveau = this.add.tilemap("carte");
