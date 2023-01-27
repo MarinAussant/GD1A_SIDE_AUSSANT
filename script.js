@@ -40,11 +40,12 @@ function preload(){
 }
 
 var platforms;
-
 var player;
-var playerLife = 3;
+var playerLife = 3  ;
 var cursors;
-var cameras; 
+var cameras;
+
+let keyA;
 
 //var score = 0;
 //var scoreText;
@@ -136,21 +137,30 @@ function create(){
 
     // Collision des plateformes
     calque_plateformes.setCollisionByProperty({ estSolide: true });
-    calque_piques.setCollisionByProperty({ takeDamage: true});
+    calque_piques.setCollisionByProperty({ takeDamage: true });
+
+    /*
+    calque_piques.forEachTile((tile) => {
+        if(tile.properties.takeDamage){
+            this.physics.add.overlap(player, tile, spikeDamage, null, this);
+            console.log(tile);
+        }
+    })
+    */
 
     // Affiche un texte à l’écran, pour le score
     //scoreText=this.add.text(16,16,'score: 0',{fontSize:'32px',fill:'#000'});
         
     // Création de la détéction du clavier
     cursors = this.input.keyboard.createCursorKeys();
+    keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
 
     // Faire en sorte que le joueur collide avec les bords du monde
     player.setCollideWorldBounds(true);
 
     // Faire en sorte que le joueur collide avec les platformes
     this.physics.add.collider(player, calque_plateformes);
-    this.physics.add.collider(player, calque_piques);
-    //this.physics.add.overlap(player, calque_piques, spikeDamage, null, this);
+    this.physics.add.collider(player, calque_piques, spikeDamage, null, this);
     
     this.anims.create({
         key: 'maxLife',
@@ -228,10 +238,23 @@ function update(){
         player.setVelocityY(-375); //alors vitesse verticale négative
         //(on saute)
     }
+    if(keyA.isDown){
+        console.log(player.x);
+        console.log(player.y);
+    }
 
 }
 
 function spikeDamage(){
+
+    if(player.body.velocity.y == 0 && player.body.blocked.down){
+        player.setVelocityY(-300);
+    }
+    else if(player.body.velocity.y == 0 && player.body.blocked.up){
+        player.setVelocityY(150);
+    }
+
+    //player.setVelocity(-(player.body.velocity.x),-(player.body.velocity.y))
     playerLife -= 1;
     console.log(playerLife);
 }
