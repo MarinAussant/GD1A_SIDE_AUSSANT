@@ -14,23 +14,40 @@ new Phaser.Game(config);
 
 function preload(){
 
-    this.load.image("Phaser_tuilesdejeu","assets/images/tileset.png");
-    this.load.image('background',"assets/images/BackgroundSansPlateforme.png")
-    this.load.tilemapTiledJSON("carte","assets/niveauJson.json")
-    this.load.image('forground',"assets/images/ForgroundSansPlateform.png")
-    this.load.image('sunLight',"assets/images/LightSun.png")
 
+    //Load UI
+    this.load.image('mainPv',"assets/ui/Vie_Princ.png");
+    this.load.image('uiCoin',"assets/ui/Piece.png");
+
+    //Load Background images
+    this.load.image('forground',"assets/images/ForgroundSansPlateform.png");
+    this.load.image('sunLight',"assets/images/LightSun.png");
+    this.load.image('background',"assets/images/BackgroundSansPlateforme.png");
+
+    //Load SpritSheet
     this.load.spritesheet('perso','assets/images/perso.png',
     { frameWidth: 32, frameHeight: 48 });
+
+    this.load.spritesheet('lifeUI','assets/ui/lifeSheet.png',
+    { frameWidth: 131, frameHeight: 96 });
+    //131 x 96
+
+
+    //Load Tiled
+    this.load.image("Phaser_tuilesdejeu","assets/images/tileset.png");
+    this.load.tilemapTiledJSON("carte","assets/niveauJson.json");
+    
 }
 
 var platforms;
 
 var player;
+var playerLife = 3;
 var cursors;
-var cameras;
-var score = 0;
-var scoreText;
+var cameras; 
+
+//var score = 0;
+//var scoreText;
 
 var gameOver = false;
 
@@ -39,7 +56,7 @@ function create(){
 
     //Caméra 
 
-    cameras = this.cameras.main.setSize(800, 600);
+    cameras = this.cameras.main.setSize(1024.5, 500);
 
     // Chargement de la carte 
     carteDuNiveau = this.add.tilemap("carte");
@@ -59,14 +76,13 @@ function create(){
         tileset
     );
 
-        //create player
+    //create player
     player = this.physics.add.sprite(100, 450, 'perso');
 
-
+    //set camera
     cameras.startFollow(player);
     cameras.setDeadzone(100,100);
     cameras.setBounds(0,0,1600,1600);
-    //player.setBounce(0.2);
 
     calque_murs = carteDuNiveau.createLayer(
         "Murs Accrochable / Cotes Nuages",
@@ -112,11 +128,18 @@ function create(){
 
     (this.add.image(0,0,'sunLight').setOrigin(0,0)).alpha = 0.17;
 
+    //affichage ui
+    lifeUI = this.add.sprite(0,0, 'lifeUI').setOrigin(0,0).setScrollFactor(0);
+    this.add.sprite(0,0,'mainPv').setOrigin(0,0).setScrollFactor(0);
+
+    this.add.sprite(0,0,'uiCoin').setOrigin(0,0).setScrollFactor(0);
+
     // Collision des plateformes
-    calque_plateformes.setCollisionByProperty({ estSolide: true }); 
+    calque_plateformes.setCollisionByProperty({ estSolide: true });
+    calque_piques.setCollisionByProperty({ takeDamage: true});
 
     // Affiche un texte à l’écran, pour le score
-    scoreText=this.add.text(16,16,'score: 0',{fontSize:'32px',fill:'#000'});
+    //scoreText=this.add.text(16,16,'score: 0',{fontSize:'32px',fill:'#000'});
         
     // Création de la détéction du clavier
     cursors = this.input.keyboard.createCursorKeys();
@@ -126,7 +149,30 @@ function create(){
 
     // Faire en sorte que le joueur collide avec les platformes
     this.physics.add.collider(player, calque_plateformes);
+    this.physics.add.collider(player, calque_piques);
+    //this.physics.add.overlap(player, calque_piques, spikeDamage, null, this);
+    
+    this.anims.create({
+        key: 'maxLife',
+        frames: this.anims.generateFrameNumbers('lifeUI', {start:0,end:1}),
+        frameRate: 2,
+        repeat: -1
+    })
 
+    this.anims.create({
+        key: 'midLife',
+        frames: this.anims.generateFrameNumbers('lifeUI', {start:2,end:3}),
+        frameRate: 2,
+        repeat: -1
+    })
+
+    this.anims.create({
+        key: 'lowLife',
+        frames: this.anims.generateFrameNumbers('lifeUI', {start:4,end:5}),
+        frameRate: 2,
+        repeat: -1
+    })
+    
     this.anims.create({
         key: 'left',
         frames: this.anims.generateFrameNumbers('perso', {start:0,end:3}),
@@ -153,6 +199,18 @@ function update(){
 
     if (gameOver){return;}
 
+    
+    if (playerLife == 3){
+        lifeUI.anims.play('maxLife', true);
+    }
+    if (playerLife == 2){
+        lifeUI.anims.play('midLife', true);
+    }
+    if (playerLife == 1){
+        lifeUI.anims.play('lowLife', true);
+    }
+    
+
     if (cursors.left.isDown){ //si la touche gauche est appuyée
         player.setVelocityX(-220); //alors vitesse négative en X
         player.anims.play('left', true); //et animation => gauche
@@ -171,6 +229,11 @@ function update(){
         //(on saute)
     }
 
+}
+
+function spikeDamage(){
+    playerLife -= 1;
+    console.log(playerLife);
 }
 
     
