@@ -66,7 +66,7 @@ function create(){
         "MPN_LevelDesign",
         "Phaser_tuilesdejeu"
     );
-    
+
     // Chargement des calques et des images
 
     this.add.image(0,0,'background').setOrigin(0,0);
