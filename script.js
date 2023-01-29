@@ -42,6 +42,7 @@ function preload(){
 var platforms;
 var player;
 var playerLife = 3  ;
+var playerCooldown = false;
 var cursors;
 var cameras;
 
@@ -79,6 +80,11 @@ function create(){
 
     //create player
     player = this.physics.add.sprite(100, 450, 'perso');
+
+    customPlayerBound = player.body.setBoundsRectangle((0,0,player.body.height,player.body.halfHeight));
+    //customPlayerBound = player.body.setBoundsRectangle((0,0,500,500));
+    //console.log(customPlayerBound);
+    //console.log(player.body.customBoundsRectangle);
 
     //set camera
     cameras.startFollow(player);
@@ -138,15 +144,6 @@ function create(){
     // Collision des plateformes
     calque_plateformes.setCollisionByProperty({ estSolide: true });
     calque_piques.setCollisionByProperty({ takeDamage: true });
-
-    /*
-    calque_piques.forEachTile((tile) => {
-        if(tile.properties.takeDamage){
-            this.physics.add.overlap(player, tile, spikeDamage, null, this);
-            console.log(tile);
-        }
-    })
-    */
 
     // Affiche un texte à l’écran, pour le score
     //scoreText=this.add.text(16,16,'score: 0',{fontSize:'32px',fill:'#000'});
@@ -220,7 +217,6 @@ function update(){
         lifeUI.anims.play('lowLife', true);
     }
     
-
     if (cursors.left.isDown){ //si la touche gauche est appuyée
         player.setVelocityX(-220); //alors vitesse négative en X
         player.anims.play('left', true); //et animation => gauche
@@ -233,30 +229,62 @@ function update(){
         player.setVelocityX(0); //vitesse nulle
         player.anims.play('turn'); //animation fait face caméra
     }
-    if (cursors.up.isDown && (player.body.blocked.down || player.body.blocked.right || player.body.blocked.left)){
+    if (cursors.up.isDown && player.body.blocked.down){
         //si touche haut appuyée ET que le perso touche le sol
         player.setVelocityY(-375); //alors vitesse verticale négative
         //(on saute)
     }
-    if(keyA.isDown){
-        console.log(player.x);
-        console.log(player.y);
+    if (customPlayerBound.onWall()){
+        player.setVelocityY(0);
+        player.body.setGravityY(2);
+        console.log("yoyo");
+    }
+    else {
+        player.body.setGravityY(100);
     }
 
 }
 
 function spikeDamage(){
 
-    if(player.body.velocity.y == 0 && player.body.blocked.down){
-        player.setVelocityY(-300);
-    }
-    else if(player.body.velocity.y == 0 && player.body.blocked.up){
-        player.setVelocityY(150);
-    }
+    // Cooldown entre chaque dégat
+    // Quand le joueur prend un dégat, son cooldown et activé et il ne peux plus en recevoir avant 2000ms
+    if (playerCooldown == false){
 
-    //player.setVelocity(-(player.body.velocity.x),-(player.body.velocity.y))
-    playerLife -= 1;
-    console.log(playerLife);
-}
+        if(player.body.velocity.y == 0 && player.body.blocked.down){  // Si le joueur prend des dégats depuis ses pieds,
+            player.setVelocityY(-300);                                // Il est repoussé vers le haut
+        }
+        else if(player.body.velocity.y == 0 && player.body.blocked.up){ // Si le joueur prend des dégats depuis sa tête,
+            player.setVelocityY(-300);                                  // Il est repoussé vers le bas
+            player.setVelocityY(150);
+        }
 
+        playerLife -= 1;
+
+        playerCooldown = true;
+        playerOpacityFull = true;
+
+        // pendant ce temps, son opacité est modifié tous les 100ms pour montrer qu'il est invulnérable.
+        this.time.addEvent({        
+            delay : 100,
+            callback : () => {
+                if(playerOpacityFull){
+                    player.alpha = 0.25;
+                    playerOpacityFull = false
+                }
+                else {
+                    player.alpha = 1;
+                    playerOpacityFull = true;
+                }
+            },
+            repeat : 19
+        })
+
+        this.time.delayedCall(2000, () => {
+            playerCooldown = false;
+            player.alpha = 1;
+        });
+        
+    }
     
+}
