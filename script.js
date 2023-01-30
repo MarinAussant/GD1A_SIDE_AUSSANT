@@ -25,8 +25,9 @@ function preload(){
     this.load.image('background',"assets/images/BackgroundSansPlateforme.png");
 
     //Load SpritSheet
-    this.load.spritesheet('perso','assets/images/perso.png',
-    { frameWidth: 32, frameHeight: 48 });
+    this.load.spritesheet('perso','assets/images/persoSpritesTest.png',
+    { frameWidth: 128, frameHeight: 241 });
+    //Width: 128 px - Height: 256px
 
     this.load.spritesheet('lifeUI','assets/ui/lifeSheet.png',
     { frameWidth: 131, frameHeight: 96 });
@@ -40,9 +41,14 @@ function preload(){
 }
 
 var platforms;
+
 var player;
 var playerLife = 3  ;
+var playerMaxSpeed = 200;
+var playerSpeed = 0;
 var playerCooldown = false;
+var playerCanLeft = true;
+var playerCanRight = true;
 var cursors;
 var cameras;
 
@@ -79,7 +85,7 @@ function create(){
     );
 
     //create player
-    player = this.physics.add.sprite(100, 450, 'perso');
+    player = this.physics.add.sprite(100, 600, 'perso').setScale(0.25);
 
     customPlayerBound = player.body.setBoundsRectangle((0,0,player.body.height,player.body.halfHeight));
     //customPlayerBound = player.body.setBoundsRectangle((0,0,1600,1600));
@@ -138,7 +144,6 @@ function create(){
     //affichage ui
     lifeUI = this.add.sprite(0,0, 'lifeUI').setOrigin(0,0).setScrollFactor(0);
     this.add.sprite(0,0,'mainPv').setOrigin(0,0).setScrollFactor(0);
-
     this.add.sprite(0,0,'uiCoin').setOrigin(0,0).setScrollFactor(0);
 
     // Collision des plateformes
@@ -182,7 +187,7 @@ function create(){
     
     this.anims.create({
         key: 'left',
-        frames: this.anims.generateFrameNumbers('perso', {start:0,end:3}),
+        frames: this.anims.generateFrameNumbers('perso', {start:1,end:2}),
         frameRate: 10,
         repeat: -1
     });
@@ -192,13 +197,37 @@ function create(){
         frames: [ { key: 'perso', frame: 4 } ],
         frameRate: 20
     });
+
     this.anims.create({
         key: 'right',
-        frames: this.anims.generateFrameNumbers('perso', {start:5,end:8}),
+        frames: this.anims.generateFrameNumbers('perso', {start:6,end:7}),
         frameRate: 10,
         repeat: -1
     });
 
+    this.anims.create({
+        key: 'jumpRight',
+        frames: [ { key: 'perso', frame: 5 } ],
+        frameRate: 20
+    });
+
+    this.anims.create({
+        key: 'jumpLeft',
+        frames: [ { key: 'perso', frame: 3 } ],
+        frameRate: 20
+    });
+
+    this.anims.create({
+        key: 'wallRight',
+        frames: [ { key: 'perso', frame: 8 } ],
+        frameRate: 20
+    });
+
+    this.anims.create({
+        key: 'wallLeft',
+        frames: [ { key: 'perso', frame: 0 } ],
+        frameRate: 20
+    });
 }
     
 
@@ -217,30 +246,64 @@ function update(){
         lifeUI.anims.play('lowLife', true);
     }
     
-    if (cursors.left.isDown){ //si la touche gauche est appuyée
-        player.setVelocityX(-220); //alors vitesse négative en X
+    if (cursors.left.isDown){
+        if (playerCanLeft) {
+            player.setVelocityX(-200); //si la touche gauche est appuyée //alors vitesse négative en X
+        } 
         player.anims.play('left', true); //et animation => gauche
     }
     else if (cursors.right.isDown){ //sinon si la touche droite est appuyée
-        player.setVelocityX(220); //alors vitesse positive en X
+        if (playerCanRight) {
+            player.setVelocityX(200); //alors vitesse positive en X
+        }
         player.anims.play('right', true); //et animation => droite
     }
     else{ // sinon
         player.setVelocityX(0); //vitesse nulle
         player.anims.play('turn'); //animation fait face caméra
     }
+    if (!player.body.blocked.down){
+        if (cursors.right.isDown){
+            player.anims.play('jumpRight')
+        }
+        else if (cursors.left.isDown){
+            player.anims.play('jumpLeft')
+        }
+    }
     if (cursors.up.isDown && player.body.blocked.down){
         //si touche haut appuyée ET que le perso touche le sol
-        player.setVelocityY(-375); //alors vitesse verticale négative
+        player.setVelocityY(-400); //alors vitesse verticale négative
         //(on saute)
     }
-    if (customPlayerBound.onWall()){
+    if (customPlayerBound.onWall()){                //Si le joueur est contre un mur
+
         player.setVelocityY(20);
-        //player.body.setGravityY(2);
-        console.log("yoyo");
-        if(cursors.up.isDown){
-            player.setVelocityY(-375);
-            
+        if (player.body.blocked.right){
+            player.anims.play('wallRight')
+        }
+        else if (player.body.blocked.left){
+            player.anims.play('wallLeft')
+        }
+
+        //console.log("yoyo");
+        if(cursors.up.isDown){                      //Et qu'il appuit sur SAUTER,
+            player.setVelocityY(-350);
+            if(customPlayerBound.blocked.right){
+                player.setVelocityX(-100);
+                playerCanRight = false;
+
+                this.time.delayedCall(250, () => {
+                    playerCanRight = true;
+                });
+            }                                       // Il est repoussé dans la direction opposé et ne
+            if(customPlayerBound.blocked.left){     // et ne peut qu'aller dans cette dernière pendant
+                player.setVelocityX(100);           // un certain temps court
+                playerCanLeft = false;
+
+                this.time.delayedCall(250, () => {
+                    playerCanLeft = true;
+                });
+            }
         }
     }
     else {
