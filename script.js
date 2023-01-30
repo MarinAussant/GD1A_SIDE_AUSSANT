@@ -82,8 +82,8 @@ function create(){
     player = this.physics.add.sprite(100, 450, 'perso');
 
     customPlayerBound = player.body.setBoundsRectangle((0,0,player.body.height,player.body.halfHeight));
-    //customPlayerBound = player.body.setBoundsRectangle((0,0,500,500));
-    //console.log(customPlayerBound);
+    //customPlayerBound = player.body.setBoundsRectangle((0,0,1600,1600));
+    console.log(customPlayerBound);
     //console.log(player.body.customBoundsRectangle);
 
     //set camera
@@ -235,9 +235,13 @@ function update(){
         //(on saute)
     }
     if (customPlayerBound.onWall()){
-        player.setVelocityY(0);
-        player.body.setGravityY(2);
+        player.setVelocityY(20);
+        //player.body.setGravityY(2);
         console.log("yoyo");
+        if(cursors.up.isDown){
+            player.setVelocityY(-375);
+            
+        }
     }
     else {
         player.body.setGravityY(100);
