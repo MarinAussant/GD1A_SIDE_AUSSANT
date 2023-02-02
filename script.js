@@ -19,6 +19,9 @@ function preload(){
     this.load.image('mainPv',"assets/ui/Vie_Princ.png");
     this.load.image('uiCoin',"assets/ui/Piece.png");
 
+    //Load other images
+    this.load.image('piece',"assets/images/piece.png");
+
     //Load Background images
     this.load.image('forground',"assets/images/ForgroundSansPlateform.png");
     this.load.image('sunLight',"assets/images/LightSun.png");
@@ -49,13 +52,15 @@ var playerSpeed = 0;
 var playerCooldown = false;
 var playerCanLeft = true;
 var playerCanRight = true;
+var playerCanJump = true;
 var cursors;
 var cameras;
+var scoreText;
+var score = 0;
 
 let keyA;
 
-//var score = 0;
-//var scoreText;
+
 
 var gameOver = false;
 
@@ -85,7 +90,7 @@ function create(){
     );
 
     //create player
-    player = this.physics.add.sprite(100, 600, 'perso').setScale(0.25);
+    player = this.physics.add.sprite(50, 900, 'perso').setScale(0.25);
 
     customPlayerBound = player.body.setBoundsRectangle((0,0,player.body.height,player.body.halfHeight));
     //customPlayerBound = player.body.setBoundsRectangle((0,0,1600,1600));
@@ -106,11 +111,14 @@ function create(){
         "Piques",
         tileset
     );
-
-    calque_collectible = carteDuNiveau.createLayer(
-        "Collectible",
-        tileset
-    );
+    
+    // Création des pièces et faire en sorte que le joueur overlap avec elles
+    coin = this.physics.add.group();
+    calque_collectibles = carteDuNiveau.getObjectLayer('Collectibles');
+    calque_collectibles.objects.forEach(eachCoin => {
+        const piece = coin.create(eachCoin.x+16,  eachCoin.y-16, "piece").body.setAllowGravity(false)
+    });
+    this.physics.add.overlap(player,coin,getCoin,null,this);
 
     calque_eauFond = carteDuNiveau.createLayer(
         "Eau vers le fond",
@@ -145,13 +153,11 @@ function create(){
     lifeUI = this.add.sprite(0,0, 'lifeUI').setOrigin(0,0).setScrollFactor(0);
     this.add.sprite(0,0,'mainPv').setOrigin(0,0).setScrollFactor(0);
     this.add.sprite(0,0,'uiCoin').setOrigin(0,0).setScrollFactor(0);
+    scoreText=this.add.text(16,185,'0',{fontSize:'32px',fill:'#FFD700'}).setScrollFactor(0);
 
     // Collision des plateformes
     calque_plateformes.setCollisionByProperty({ estSolide: true });
     calque_piques.setCollisionByProperty({ takeDamage: true });
-
-    // Affiche un texte à l’écran, pour le score
-    //scoreText=this.add.text(16,16,'score: 0',{fontSize:'32px',fill:'#000'});
         
     // Création de la détéction du clavier
     cursors = this.input.keyboard.createCursorKeys();
@@ -160,7 +166,7 @@ function create(){
     // Faire en sorte que le joueur collide avec les bords du monde
     player.setCollideWorldBounds(true);
 
-    // Faire en sorte que le joueur collide avec les platformes
+    // Faire en sorte que le joueur collide avec les platformes et les piques
     this.physics.add.collider(player, calque_plateformes);
     this.physics.add.collider(player, calque_piques, spikeDamage, null, this);
     
@@ -246,6 +252,8 @@ function update(){
         lifeUI.anims.play('lowLife', true);
     }
     
+    // DIRECTION 
+
     if (cursors.left.isDown){
         if (playerCanLeft) {
             player.setVelocityX(-200); //si la touche gauche est appuyée //alors vitesse négative en X
@@ -262,6 +270,11 @@ function update(){
         player.setVelocityX(0); //vitesse nulle
         player.anims.play('turn'); //animation fait face caméra
     }
+
+    // SAUT
+
+    if(cursors.up.is)
+
     if (!player.body.blocked.down){
         if (cursors.right.isDown){
             player.anims.play('jumpRight')
@@ -270,14 +283,15 @@ function update(){
             player.anims.play('jumpLeft')
         }
     }
-    if (cursors.up.isDown && player.body.blocked.down){
+    if (cursors.up.isDown && player.body.blocked.down && playerCanJump){
         //si touche haut appuyée ET que le perso touche le sol
         player.setVelocityY(-400); //alors vitesse verticale négative
         //(on saute)
+        playerCanJump = false;
     }
-    if (customPlayerBound.onWall()){                //Si le joueur est contre un mur
+    if (player.body.onWall()){                //Si le joueur est contre un mur
 
-        player.setVelocityY(20);
+        player.setVelocityY(50);
         if (player.body.blocked.right){
             player.anims.play('wallRight')
         }
@@ -285,7 +299,6 @@ function update(){
             player.anims.play('wallLeft')
         }
 
-        //console.log("yoyo");
         if(cursors.up.isDown){                      //Et qu'il appuit sur SAUTER,
             player.setVelocityY(-350);
             if(customPlayerBound.blocked.right){
@@ -354,4 +367,10 @@ function spikeDamage(){
         
     }
     
+}
+
+function getCoin(player, coin){
+    coin.disableBody(true,true);
+    score += 1;
+    scoreText.text = score;
 }
