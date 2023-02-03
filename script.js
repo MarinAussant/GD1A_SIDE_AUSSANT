@@ -5,7 +5,7 @@ var config = {
         default: 'arcade',
         arcade: {
         gravity: { y: 1000 },
-        debug: true
+        debug: false
     }},
     scene: {preload: preload, create: create, update: update }
 };
@@ -21,6 +21,7 @@ function preload(){
 
     //Load other images
     this.load.image('piece',"assets/images/piece.png");
+    this.load.image('slimeItem',"assets/images/slimeItemPixel.png");
 
     //Load Background images
     this.load.image('forground',"assets/images/ForgroundSansPlateform.png");
@@ -30,7 +31,8 @@ function preload(){
     //Load SpritSheet
     this.load.spritesheet('perso','assets/images/persoSpritesTest.png',
     { frameWidth: 128, frameHeight: 241 });
-    //Width: 128 px - Height: 256px
+    this.load.spritesheet('water','assets/images/waterSprite.png',
+    { frameWidth: 32, frameHeight: 32 });
 
     this.load.spritesheet('lifeUI','assets/ui/lifeSheet.png',
     { frameWidth: 131, frameHeight: 96 });
@@ -43,22 +45,24 @@ function preload(){
     
 }
 
-var platforms;
+// Variables relatives au joueur
 
 var player;
 var playerLife = 3  ;
-var playerMaxSpeed = 200;
-var playerSpeed = 0;
+var playerSpeed = 200;
+var playerJump = 400;
 var playerCooldown = false;
 var playerCanLeft = true;
 var playerCanRight = true;
 var playerCanJump = true;
+var playerGetSlime = false;
+
 var cursors;
 var cameras;
 var scoreText;
 var score = 0;
 
-let keyA;
+let keySpace;
 
 
 
@@ -89,6 +93,12 @@ function create(){
         tileset
     );
 
+    calque_waterPlateformes = carteDuNiveau.createLayer(
+        "Water Plateformes",
+        tileset
+    );
+    calque_waterPlateformes.alpha = 0.5;
+
     //create player
     player = this.physics.add.sprite(50, 900, 'perso').setScale(0.25);
 
@@ -116,9 +126,87 @@ function create(){
     coin = this.physics.add.group();
     calque_collectibles = carteDuNiveau.getObjectLayer('Collectibles');
     calque_collectibles.objects.forEach(eachCoin => {
-        const piece = coin.create(eachCoin.x+16,  eachCoin.y-16, "piece").body.setAllowGravity(false)
+        const piece = coin.create(eachCoin.x+16,  eachCoin.y-16, "piece").body.setAllowGravity(false);
     });
     this.physics.add.overlap(player,coin,getCoin,null,this);
+
+
+    // Création images animés eau
+    animWaterStagTop=[];
+    eauStagTop = this.physics.add.group();
+    calque_eauStagTop = carteDuNiveau.getObjectLayer('Eau Stagnante Top');
+    calque_eauStagTop.objects.forEach(eachWater => {
+        const water = eauStagTop.create(eachWater.x+16,  eachWater.y-16, "water").body.setAllowGravity(false);
+        animWaterStagTop.push(this.add.sprite(eachWater.x+16,  eachWater.y-16, "water").setAlpha(0.75));
+    });
+    eauStagTop.setAlpha(0.0);
+    this.physics.add.overlap(player,eauStagTop,inWater,null,this);
+
+    animWaterStagBot=[];
+    eauStagBot = this.physics.add.group();
+    calque_eauStagBot = carteDuNiveau.getObjectLayer('Eau Stagnante Bottom');
+    calque_eauStagBot.objects.forEach(eachWater => {
+        const water = eauStagBot.create(eachWater.x+16,  eachWater.y-16, "water").body.setAllowGravity(false);
+        animWaterStagBot.push(this.add.sprite(eachWater.x+16,  eachWater.y-16, "water").setAlpha(0.75));
+    });
+    eauStagBot.setAlpha(0.0);
+    this.physics.add.overlap(player,eauStagBot,inWater,null,this);
+
+    animWaterStagBordTop=[];
+    eauStagBordTop = this.physics.add.group();
+    calque_eauStagBordTop = carteDuNiveau.getObjectLayer('Eau Stagnante Side Top');
+    calque_eauStagBordTop.objects.forEach(eachWater => {
+        const water = eauStagBordTop.create(eachWater.x+16,  eachWater.y-16, "water").body.setAllowGravity(false);
+        animWaterStagBordTop.push(this.add.sprite(eachWater.x+16,  eachWater.y-16, "water").setAlpha(0.75));
+    });
+    eauStagBordTop.setAlpha(0.0);
+    this.physics.add.overlap(player,eauStagBordTop,inWater,null,this);
+
+    animWaterStagBordBot=[];
+    eauStagBordBot = this.physics.add.group();
+    calque_eauStagBordBot = carteDuNiveau.getObjectLayer('Eau Stagnante Side Bottom');
+    calque_eauStagBordBot.objects.forEach(eachWater => {
+        const water = eauStagBordBot.create(eachWater.x+16,  eachWater.y-16, "water").body.setAllowGravity(false);
+        animWaterStagBordBot.push(this.add.sprite(eachWater.x+16,  eachWater.y-16, "water").setAlpha(0.75));
+    });
+    eauStagBordBot.setAlpha(0.0);
+    this.physics.add.overlap(player,eauStagBordBot,inWater,null,this);
+
+    animWaterDroite=[];
+    eauDroite = this.physics.add.group();
+    calque_eauDroite = carteDuNiveau.getObjectLayer('Eau Bouge Flat');
+    calque_eauDroite.objects.forEach(eachWater => {
+        const water = eauDroite.create(eachWater.x+16,  eachWater.y-16, "water").body.setAllowGravity(false);
+        animWaterDroite.push(this.add.sprite(eachWater.x+16,  eachWater.y-16, "water").setAlpha(0.75));
+    });
+    eauDroite.setAlpha(0.0);
+    this.physics.add.overlap(player,eauDroite,inWater,null,this);
+    this.physics.add.overlap(player,eauDroite,inWaterRight,null,this);
+
+    animWaterBasTop=[];
+    eauBasTop = this.physics.add.group();
+    calque_eauBasTop = carteDuNiveau.getObjectLayer('Eau Bas Top');
+    calque_eauBasTop.objects.forEach(eachWater => {
+        const water = eauBasTop.create(eachWater.x+16,  eachWater.y-16, "water").body.setAllowGravity(false);
+        animWaterBasTop.push(this.add.sprite(eachWater.x+16,  eachWater.y-16, "water").setAlpha(0.75));
+    });
+    eauBasTop.setAlpha(0.0);
+    this.physics.add.overlap(player,eauBasTop,inWater,null,this);
+    this.physics.add.overlap(player,eauBasTop,inWaterRight,null,this);
+
+    animWaterBasBot=[];
+    eauBasBot = this.physics.add.group();
+    calque_eauBasBot = carteDuNiveau.getObjectLayer('Eau Bas Bottom');
+    calque_eauBasBot.objects.forEach(eachWater => {
+        const water = (eauBasBot.create(eachWater.x+16,  eachWater.y-16, "water").body.setAllowGravity(false)).alpha = 0;
+        animWaterBasBot.push(this.add.sprite(eachWater.x+16,  eachWater.y-16, "water").setAlpha(0.75));
+    });
+    eauBasBot.setAlpha(0.0);
+    this.physics.add.overlap(player,eauBasBot,inWater,null,this);
+    this.physics.add.overlap(player,eauBasBot,inWaterRight,null,this);
+
+    //lifeUI = this.add.sprite(eachWater.x+16,  eachWater.y-16, "water")
+
 
     calque_eauFond = carteDuNiveau.createLayer(
         "Eau vers le fond",
@@ -147,6 +235,10 @@ function create(){
         tileset
     );
 
+    slimeItem = this.physics.add.group();
+    slimeItem.create(480,1250, "slimeItem").body.setAllowGravity(false);
+    this.physics.add.overlap(player,slimeItem,getSlimeItem,null,this);
+
     (this.add.image(0,0,'sunLight').setOrigin(0,0)).alpha = 0.17;
 
     //affichage ui
@@ -161,7 +253,7 @@ function create(){
         
     // Création de la détéction du clavier
     cursors = this.input.keyboard.createCursorKeys();
-    keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
+    keySpace = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 
     // Faire en sorte que le joueur collide avec les bords du monde
     player.setCollideWorldBounds(true);
@@ -170,6 +262,8 @@ function create(){
     this.physics.add.collider(player, calque_plateformes);
     this.physics.add.collider(player, calque_piques, spikeDamage, null, this);
     
+
+    // Animation Vie
     this.anims.create({
         key: 'maxLife',
         frames: this.anims.generateFrameNumbers('lifeUI', {start:0,end:1}),
@@ -190,7 +284,9 @@ function create(){
         frameRate: 2,
         repeat: -1
     })
-    
+
+
+    // Animation Personnage
     this.anims.create({
         key: 'left',
         frames: this.anims.generateFrameNumbers('perso', {start:1,end:2}),
@@ -234,14 +330,79 @@ function create(){
         frames: [ { key: 'perso', frame: 0 } ],
         frameRate: 20
     });
+
+
+    // Animation Water
+    this.anims.create({
+        key: 'eauStagBordTop',
+        frames: this.anims.generateFrameNumbers('water', {start:0,end:1}),
+        frameRate: 2,
+        repeat: -1
+    });
+
+    this.anims.create({
+        key: 'eauStagBordBot',
+        frames: this.anims.generateFrameNumbers('water', {start:2,end:3}),
+        frameRate: 2,
+        repeat: -1
+    });
+
+    this.anims.create({
+        key: 'eauStagTop',
+        frames: this.anims.generateFrameNumbers('water', {start:4,end:6}),
+        frameRate: 2,
+        repeat: -1
+    });
+
+    this.anims.create({
+        key: 'eauStagBot',
+        frames: this.anims.generateFrameNumbers('water', {start:7,end:9}),
+        frameRate: 2,
+        repeat: -1
+    });
+
+    this.anims.create({
+        key: 'eauDroite',
+        frames: this.anims.generateFrameNumbers('water', {start:4,end:6}),
+        frameRate: 8,
+        repeat: -1
+    });
+    
+    this.anims.create({
+        key: 'eauBasTop',
+        frames: this.anims.generateFrameNumbers('water', {start:10,end:11}),
+        frameRate: 10,
+        repeat: -1
+    });
+
+    this.anims.create({
+        key: 'eauBasBot',
+        frames: this.anims.generateFrameNumbers('water', {start:12,end:13}),
+        frameRate: 10,
+        repeat: -1
+    });
 }
     
 
 function update(){
 
+    if(!this.physics.overlap(player,eauDroite) && 
+        !this.physics.overlap(player,eauStagBordBot) && 
+        !this.physics.overlap(player,eauStagBordTop) &&
+        !this.physics.overlap(player,eauStagBot) &&
+        !this.physics.overlap(player,eauStagTop) &&
+        !this.physics.overlap(player,eauBasTop) &&
+        !this.physics.overlap(player,eauBasBot)) {
+            playerSpeed = 200;
+            playerJump = 400;
+        };
+
     if (gameOver){return;}
 
     
+    // ANIMATIONS
+
+    // Animation Vie
     if (playerLife == 3){
         lifeUI.anims.play('maxLife', true);
     }
@@ -251,18 +412,48 @@ function update(){
     if (playerLife == 1){
         lifeUI.anims.play('lowLife', true);
     }
+
+    // Animation Water 
+    animWaterBasBot.forEach(water => {
+        water.anims.play('eauBasBot',true);
+    });
+
+    animWaterBasTop.forEach(water => {
+        water.anims.play('eauBasTop',true);
+    });
+
+    animWaterDroite.forEach(water => {
+        water.anims.play('eauDroite',true);
+    });
+
+    animWaterStagBordBot.forEach(water => {
+        water.anims.play('eauStagBordBot',true);
+    });
+
+    animWaterStagBordTop.forEach(water => {
+        water.anims.play('eauStagBordTop',true);
+    });
+
+    animWaterStagBot.forEach(water => {
+        water.anims.play('eauStagBot',true);
+    });
+
+    animWaterStagTop.forEach(water => {
+        water.anims.play('eauStagTop',true);
+    });
+    
     
     // DIRECTION 
 
     if (cursors.left.isDown){
         if (playerCanLeft) {
-            player.setVelocityX(-200); //si la touche gauche est appuyée //alors vitesse négative en X
+            player.setVelocityX(-playerSpeed); //si la touche gauche est appuyée //alors vitesse négative en X
         } 
         player.anims.play('left', true); //et animation => gauche
     }
     else if (cursors.right.isDown){ //sinon si la touche droite est appuyée
         if (playerCanRight) {
-            player.setVelocityX(200); //alors vitesse positive en X
+            player.setVelocityX(playerSpeed); //alors vitesse positive en X
         }
         player.anims.play('right', true); //et animation => droite
     }
@@ -271,9 +462,19 @@ function update(){
         player.anims.play('turn'); //animation fait face caméra
     }
 
+    if(player.body.velocity.y>1000){    // On évite que le joueur n'aille trop vite en tombant
+        player.setVelocityY(1000);      // a cause de bugs de collision
+    }
+
+    // MOUVEMENT DANS L'EAU
+
+
+
     // SAUT
 
-    if(cursors.up.is)
+    if(cursors.up.isUp && playerCanJump==false){
+        playerCanJump = true;
+    }
 
     if (!player.body.blocked.down){
         if (cursors.right.isDown){
@@ -285,11 +486,14 @@ function update(){
     }
     if (cursors.up.isDown && player.body.blocked.down && playerCanJump){
         //si touche haut appuyée ET que le perso touche le sol
-        player.setVelocityY(-400); //alors vitesse verticale négative
+        player.setVelocityY(-playerJump); //alors vitesse verticale négative
         //(on saute)
         playerCanJump = false;
     }
-    if (player.body.onWall()){                //Si le joueur est contre un mur
+
+    // WALLJUMP
+
+    if (player.body.onWall() && !player.body.blocked.down && (playerGetSlime == false || !keySpace.isDown)){                //Si le joueur est contre un mur
 
         player.setVelocityY(50);
         if (player.body.blocked.right){
@@ -299,8 +503,9 @@ function update(){
             player.anims.play('wallLeft')
         }
 
-        if(cursors.up.isDown){                      //Et qu'il appuit sur SAUTER,
-            player.setVelocityY(-350);
+        if(cursors.up.isDown && playerCanJump){                      //Et qu'il appuit sur SAUTER,
+            player.setVelocityY(-playerJump);
+            playerCanJump = false;
             if(customPlayerBound.blocked.right){
                 player.setVelocityX(-100);
                 playerCanRight = false;
@@ -321,6 +526,32 @@ function update(){
     }
     else {
         player.body.setGravityY(100);
+    }
+
+    // ESCALADE
+
+    if (player.body.onWall() && (playerGetSlime == true && keySpace.isDown)){       //Si le joueur est contre un mur et appuyer sur SPACE
+
+        if(cursors.up.isDown){
+            player.setVelocityY(-75);
+        }
+        else if(cursors.down.isDown){
+            player.setVelocityY(175);
+        }
+        else{
+            player.setVelocityY(0);
+            player.body.setAllowGravity(false);
+        }
+        if (player.body.blocked.right){
+            player.anims.play('wallRight')
+        }
+        else if (player.body.blocked.left){
+            player.anims.play('wallLeft')
+        }
+    }
+    else {
+        player.body.setGravityY(100);
+        player.body.setAllowGravity(true);
     }
 
 }
@@ -373,4 +604,26 @@ function getCoin(player, coin){
     coin.disableBody(true,true);
     score += 1;
     scoreText.text = score;
+}
+
+function getSlimeItem(player, slimeItem){
+    slimeItem.disableBody(true,true);
+    playerGetSlime = true;
+    recup=this.add.text(150,30,'Vous avez récupéré des',{fontSize:'50px',fill:'#FFD700'}).setScrollFactor(0);
+    slimeGant=this.add.text(150,80,'Gants de Slime !',{fontSize:'50px',fill:'#FFD700'}).setScrollFactor(0);
+    utilisez=this.add.text(150,140,'Utilisez pour escalader les murs en restant appuyer sur Espace ou X',{fontSize:'20px',fill:'#FFD700'}).setScrollFactor(0);
+    this.time.delayedCall(5000, () => {
+        recup.destroy();
+        slimeGant.destroy();
+        utilisez.destroy();
+    });
+}
+
+function inWater(){
+    playerSpeed= 125;
+    playerJump= 300;
+}
+
+function inWaterRight(){
+    player.body.position.x+=1;
 }
