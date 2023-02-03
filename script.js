@@ -105,7 +105,6 @@ function create(){
     customPlayerBound = player.body.setBoundsRectangle((0,0,player.body.height,player.body.halfHeight));
     //customPlayerBound = player.body.setBoundsRectangle((0,0,1600,1600));
     console.log(customPlayerBound);
-    //console.log(player.body.customBoundsRectangle);
 
     //set camera
     cameras.startFollow(player);
@@ -205,23 +204,6 @@ function create(){
     this.physics.add.overlap(player,eauBasBot,inWater,null,this);
     this.physics.add.overlap(player,eauBasBot,inWaterRight,null,this);
 
-    //lifeUI = this.add.sprite(eachWater.x+16,  eachWater.y-16, "water")
-
-
-    calque_eauFond = carteDuNiveau.createLayer(
-        "Eau vers le fond",
-        tileset
-    );
-
-    calque_eauDroite = carteDuNiveau.createLayer(
-        "Eau vers la droite",
-        tileset
-    );
-
-    calque_eauStag = carteDuNiveau.createLayer(
-        "Eau Stagnante",
-        tileset
-    );
 
     calque_nuages_transparent = carteDuNiveau.createLayer(
         "Nuages Transparents",
@@ -328,6 +310,18 @@ function create(){
     this.anims.create({
         key: 'wallLeft',
         frames: [ { key: 'perso', frame: 0 } ],
+        frameRate: 20
+    });
+
+    this.anims.create({
+        key: 'climbRight',
+        frames: [ { key: 'perso', frame: 9 } ],
+        frameRate: 20
+    });
+
+    this.anims.create({
+        key: 'climLeft',
+        frames: [ { key: 'perso', frame: 10 } ],
         frameRate: 20
     });
 
@@ -466,9 +460,6 @@ function update(){
         player.setVelocityY(1000);      // a cause de bugs de collision
     }
 
-    // MOUVEMENT DANS L'EAU
-
-
 
     // SAUT
 
@@ -543,10 +534,10 @@ function update(){
             player.body.setAllowGravity(false);
         }
         if (player.body.blocked.right){
-            player.anims.play('wallRight')
+            player.anims.play('climbRight')
         }
         else if (player.body.blocked.left){
-            player.anims.play('wallLeft')
+            player.anims.play('climbLeft')
         }
     }
     else {

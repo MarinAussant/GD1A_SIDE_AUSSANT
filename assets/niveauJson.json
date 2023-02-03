@@ -4,7 +4,7 @@
  "layers":[
         {
          "id":2,
-         "image":"..\/..\/..\/..\/Bureau\/Jeux vid\u00e9o 1stY\/Programmation Gameplay\/Tiled\/Dossier Tiled\/Mon Premier Niveau Tiled\/BackgroundSansPlateforme.png",
+         "image":"..\/Mon Premier Niveau Tiled\/BackgroundSansPlateforme.png",
          "name":"Backgrounds",
          "opacity":1,
          "type":"imagelayer",
@@ -140,72 +140,72 @@
          "name":"Eau Stagnante Top",
          "objects":[
                 {
+                 "class":"",
                  "gid":184,
                  "height":32,
                  "id":13,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":703.875,
                  "y":1536
                 }, 
                 {
+                 "class":"",
                  "gid":184,
                  "height":32,
                  "id":15,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":672,
                  "y":1536
                 }, 
                 {
+                 "class":"",
                  "gid":184,
                  "height":32,
                  "id":16,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":640,
                  "y":1536
                 }, 
                 {
+                 "class":"",
                  "gid":184,
                  "height":32,
                  "id":17,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":608,
                  "y":1536
                 }, 
                 {
+                 "class":"",
                  "gid":184,
                  "height":32,
                  "id":18,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":576,
                  "y":1536
                 }, 
                 {
+                 "class":"",
                  "gid":184,
                  "height":32,
                  "id":19,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":544,
@@ -223,60 +223,60 @@
          "name":"Eau Stagnante Bottom",
          "objects":[
                 {
+                 "class":"",
                  "gid":209,
                  "height":32,
                  "id":20,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":704,
                  "y":1568
                 }, 
                 {
+                 "class":"",
                  "gid":209,
                  "height":32,
                  "id":21,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
-                 "x":671.9375,
+                 "x":671.938,
                  "y":1568
                 }, 
                 {
+                 "class":"",
                  "gid":209,
                  "height":32,
                  "id":23,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":640,
                  "y":1568
                 }, 
                 {
+                 "class":"",
                  "gid":209,
                  "height":32,
                  "id":24,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":608,
                  "y":1568
                 }, 
                 {
+                 "class":"",
                  "gid":209,
                  "height":32,
                  "id":25,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":576,
@@ -294,12 +294,12 @@
          "name":"Eau Stagnante Side Top",
          "objects":[
                 {
+                 "class":"",
                  "gid":183,
                  "height":32,
                  "id":26,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":512,
@@ -317,12 +317,12 @@
          "name":"Eau Stagnante Side Bottom",
          "objects":[
                 {
+                 "class":"",
                  "gid":208,
                  "height":32,
                  "id":27,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":544,
@@ -340,168 +340,168 @@
          "name":"Eau Bouge Flat",
          "objects":[
                 {
+                 "class":"",
                  "gid":184,
                  "height":32,
                  "id":28,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":928,
                  "y":1472
                 }, 
                 {
+                 "class":"",
                  "gid":184,
                  "height":32,
                  "id":29,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":960,
                  "y":1472
                 }, 
                 {
+                 "class":"",
                  "gid":184,
                  "height":32,
                  "id":30,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":992,
                  "y":1472
                 }, 
                 {
+                 "class":"",
                  "gid":184,
                  "height":32,
                  "id":31,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":1024,
                  "y":1472
                 }, 
                 {
+                 "class":"",
                  "gid":184,
                  "height":32,
                  "id":32,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":1056,
                  "y":1472
                 }, 
                 {
+                 "class":"",
                  "gid":184,
                  "height":32,
                  "id":33,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":1088,
                  "y":1472
                 }, 
                 {
+                 "class":"",
                  "gid":184,
                  "height":32,
                  "id":34,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":1120,
                  "y":1472
                 }, 
                 {
+                 "class":"",
                  "gid":184,
                  "height":32,
                  "id":35,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":1152,
                  "y":1472
                 }, 
                 {
+                 "class":"",
                  "gid":184,
                  "height":32,
                  "id":37,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":1184,
                  "y":1472
                 }, 
                 {
+                 "class":"",
                  "gid":184,
                  "height":32,
                  "id":38,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":1216,
                  "y":1472
                 }, 
                 {
+                 "class":"",
                  "gid":184,
                  "height":32,
                  "id":39,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":1248,
                  "y":1472
                 }, 
                 {
+                 "class":"",
                  "gid":184,
                  "height":32,
                  "id":40,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":1280,
                  "y":1472
                 }, 
                 {
+                 "class":"",
                  "gid":184,
                  "height":32,
                  "id":41,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":1312,
                  "y":1472
                 }, 
                 {
+                 "class":"",
                  "gid":184,
                  "height":32,
                  "id":42,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":1344,
@@ -519,60 +519,60 @@
          "name":"Eau Bas Top",
          "objects":[
                 {
+                 "class":"",
                  "gid":188,
                  "height":32,
                  "id":43,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":1376,
                  "y":1472
                 }, 
                 {
+                 "class":"",
                  "gid":188,
                  "height":32,
                  "id":44,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":1408,
                  "y":1504
                 }, 
                 {
+                 "class":"",
                  "gid":188,
                  "height":32,
                  "id":45,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":1440,
                  "y":1536
                 }, 
                 {
+                 "class":"",
                  "gid":188,
                  "height":32,
                  "id":46,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":1472,
                  "y":1568
                 }, 
                 {
+                 "class":"",
                  "gid":188,
                  "height":32,
                  "id":47,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":1504,
@@ -590,48 +590,48 @@
          "name":"Eau Bas Bottom",
          "objects":[
                 {
+                 "class":"",
                  "gid":213,
                  "height":32,
                  "id":48,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":1376,
                  "y":1504
                 }, 
                 {
+                 "class":"",
                  "gid":213,
                  "height":32,
                  "id":49,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":1408,
                  "y":1536
                 }, 
                 {
+                 "class":"",
                  "gid":213,
                  "height":32,
                  "id":50,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":1440,
                  "y":1568
                 }, 
                 {
+                 "class":"",
                  "gid":213,
                  "height":32,
                  "id":51,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":1472,
@@ -771,120 +771,120 @@
          "name":"Collectibles",
          "objects":[
                 {
-                 "gid":758,
+                 "class":"",
+                 "gid":133,
                  "height":32,
                  "id":2,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
-                 "x":1152.18181818182,
-                 "y":799.818181818182
+                 "x":1152.18,
+                 "y":799.818
                 }, 
                 {
-                 "gid":758,
+                 "class":"",
+                 "gid":133,
                  "height":32,
                  "id":4,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
-                 "x":1407.9375,
-                 "y":864.0625
+                 "x":1407.94,
+                 "y":864.063
                 }, 
                 {
-                 "gid":758,
+                 "class":"",
+                 "gid":133,
                  "height":32,
                  "id":5,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
-                 "x":1311.875,
-                 "y":1471.875
+                 "x":1311.88,
+                 "y":1471.88
                 }, 
                 {
-                 "gid":758,
+                 "class":"",
+                 "gid":133,
                  "height":32,
                  "id":6,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
-                 "x":736.090909090909,
+                 "x":736.091,
                  "y":1440
                 }, 
                 {
-                 "gid":758,
+                 "class":"",
+                 "gid":133,
                  "height":32,
                  "id":7,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
-                 "x":479.9375,
+                 "x":479.938,
                  "y":992
                 }, 
                 {
-                 "gid":758,
+                 "class":"",
+                 "gid":133,
                  "height":32,
                  "id":8,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":672,
-                 "y":672.04347826087
+                 "y":672.043
                 }, 
                 {
-                 "gid":758,
+                 "class":"",
+                 "gid":133,
                  "height":32,
                  "id":9,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":128,
-                 "y":448.090909090909
+                 "y":448.091
                 }, 
                 {
-                 "gid":758,
+                 "class":"",
+                 "gid":133,
                  "height":32,
                  "id":10,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
-                 "x":767.9375,
+                 "x":767.938,
                  "y":896
                 }, 
                 {
-                 "gid":758,
+                 "class":"",
+                 "gid":133,
                  "height":32,
                  "id":11,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":928,
                  "y":512
                 }, 
                 {
-                 "gid":758,
+                 "class":"",
+                 "gid":133,
                  "height":32,
                  "id":12,
                  "name":"",
                  "rotation":0,
-                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":1344,
@@ -959,7 +959,7 @@
         }, 
         {
          "id":9,
-         "image":"..\/..\/..\/..\/Bureau\/Jeux vid\u00e9o 1stY\/Programmation Gameplay\/Tiled\/Dossier Tiled\/Mon Premier Niveau Tiled\/ForgroundSansPlateform.png",
+         "image":"..\/Mon Premier Niveau Tiled\/ForgroundSansPlateform.png",
          "name":"Foreground Filtre",
          "opacity":0.22,
          "type":"imagelayer",
@@ -1030,7 +1030,7 @@
         }, 
         {
          "id":11,
-         "image":"..\/..\/..\/..\/Bureau\/Jeux vid\u00e9o 1stY\/Programmation Gameplay\/Tiled\/Dossier Tiled\/Mon Premier Niveau Tiled\/LightSun.png",
+         "image":"..\/Mon Premier Niveau Tiled\/LightSun.png",
          "name":"Sunlight",
          "opacity":0.17,
          "type":"imagelayer",
@@ -1042,13 +1042,13 @@
  "nextobjectid":52,
  "orientation":"orthogonal",
  "renderorder":"right-down",
- "tiledversion":"1.8.4",
+ "tiledversion":"1.9.2",
  "tileheight":32,
  "tilesets":[
         {
          "columns":25,
          "firstgid":1,
-         "image":"..\/..\/..\/..\/Bureau\/Jeux vid\u00e9o 1stY\/Programmation Gameplay\/Tiled\/Dossier Tiled\/Mon Premier Niveau Tiled\/Aussant_Marin_JV1A_TileSet.png",
+         "image":"..\/Mon Premier Niveau Tiled\/Aussant_Marin_JV1A_TileSet.png",
          "imageheight":800,
          "imagewidth":800,
          "margin":0,
@@ -1784,7 +1784,12 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
+                        }, 
+                        {
+                         "name":"takeDamage",
+                         "type":"bool",
+                         "value":true
                         }]
                 }, 
                 {
@@ -1811,7 +1816,12 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
+                        }, 
+                        {
+                         "name":"takeDamage",
+                         "type":"bool",
+                         "value":true
                         }]
                 }, 
                 {
@@ -2145,7 +2155,12 @@
                         {
                          "name":"estSolide",
                          "type":"bool",
-                         "value":false
+                         "value":true
+                        }, 
+                        {
+                         "name":"takeDamage",
+                         "type":"bool",
+                         "value":true
                         }]
                 }, 
                 {
@@ -3309,3750 +3324,6 @@
                          "name":"estSolide",
                          "type":"bool",
                          "value":true
-                        }]
-                },
-            
-                {
-                 "id":250,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":251,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":252,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":253,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":254,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":255,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":256,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":257,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":258,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":259,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":260,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":261,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":262,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":263,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":264,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":265,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":266,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":267,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":268,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":269,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":270,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":271,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":272,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":273,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":274,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }],
-         "tilewidth":32
-        }, 
-        {
-         "columns":25,
-         "firstgid":626,
-         "image":"..\/..\/..\/..\/Bureau\/Jeux vid\u00e9o 1stY\/Level Design\/Mon premier niveau\/Dossier Tiled\/Mon Premier Niveau Tiled\/Aussant_Marin_JV1A_TileSet.png",
-         "imageheight":800,
-         "imagewidth":800,
-         "margin":0,
-         "name":"MPN_LevelDesign",
-         "spacing":0,
-         "tilecount":625,
-         "tileheight":32,
-         "tiles":[
-                {
-                 "id":0,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":1,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":2,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":3,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":4,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":5,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":6,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":7,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":8,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":9,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":10,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":11,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":12,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":13,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":14,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":15,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":16,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":17,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":18,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":19,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":20,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":21,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":22,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":23,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":24,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":25,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":26,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":27,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":28,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":29,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":30,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":31,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":32,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":33,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":34,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":35,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":36,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":37,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":38,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":39,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":40,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":41,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":42,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":43,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":44,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":45,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":46,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":47,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":48,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":49,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                },
-            
-                {
-                 "id":50,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":51,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":52,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":53,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":54,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":55,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":56,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":57,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":58,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":59,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":60,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":61,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":62,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":63,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":64,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":65,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":66,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":67,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":68,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":69,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":70,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":71,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":72,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":73,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":74,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":75,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":76,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":77,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":78,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":79,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":80,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":true
-                        }]
-                }, 
-                {
-                 "id":81,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":82,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":83,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":true
-                        }]
-                }, 
-                {
-                 "id":84,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":85,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":86,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":87,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":88,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":89,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":90,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":91,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":92,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":93,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":94,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":95,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":96,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":97,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":98,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":99,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                },
-            
-                {
-                 "id":100,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":101,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":102,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":103,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":104,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":105,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":106,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":107,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":108,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":109,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":110,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":111,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":112,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":113,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":114,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":115,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":116,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":117,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":118,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":119,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":120,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":true
-                        }]
-                }, 
-                {
-                 "id":121,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":122,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":123,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":124,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":125,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":126,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":127,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":128,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":129,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":130,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":131,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":132,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":133,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":134,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":135,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":136,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":137,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":138,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":139,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":140,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":141,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":142,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":143,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":144,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":145,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":146,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":147,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":148,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":149,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                },
-            
-                {
-                 "id":150,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":151,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":152,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":153,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":154,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":155,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":156,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":157,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":158,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":159,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":160,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":161,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":162,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":163,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":164,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":165,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":166,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":167,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":168,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":169,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":170,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":171,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":172,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":173,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":174,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":175,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":176,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":177,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":178,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":179,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":180,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":181,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":182,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":183,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":184,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":185,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":186,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":187,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":188,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":189,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":190,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":191,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":192,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":193,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":194,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":195,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":196,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":197,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":198,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":199,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                },
-            
-                {
-                 "id":200,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":201,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":202,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":203,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":204,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":205,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":206,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":207,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":208,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":209,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":210,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":211,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":212,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":213,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":214,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":215,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":216,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":217,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":218,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":219,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":220,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":221,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":222,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":223,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":224,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":225,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":226,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":227,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":228,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":229,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":230,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":231,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":232,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":233,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":234,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":235,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":236,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":237,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":238,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":239,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":240,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":241,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":242,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":243,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":244,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":245,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":246,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":247,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":248,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":249,
-                 "properties":[
-                        {
-                         "name":"estSolide",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"takeDamage",
-                         "type":"bool",
-                         "value":false
                         }]
                 },
             
@@ -7285,6 +3556,6 @@
         }],
  "tilewidth":32,
  "type":"map",
- "version":"1.8",
+ "version":"1.9",
  "width":50
 }
