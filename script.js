@@ -7,6 +7,7 @@ var config = {
         gravity: { y: 1000 },
         debug: true
     }},
+    input:{gamepad:true},
     scene: {preload: preload, create: create, update: update }
 };
 
@@ -65,6 +66,7 @@ var ennemi;
 var ennemiCanJump = true;
 
 var cursors;
+var controller = false;
 var cameras;
 var scoreText;
 var score = 0;
@@ -242,6 +244,11 @@ function create(){
     // Création de la détéction du clavier
     cursors = this.input.keyboard.createCursorKeys();
     keySpace = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+    
+    // Création de la détéction de la manette 
+    this.input.gamepad.once('connected', function (manette) {
+        controller = manette;
+      });
 
     // Faire en sorte que le joueur collide avec les bords du monde
     player.setCollideWorldBounds(true);
@@ -513,14 +520,15 @@ function update(){
     
     
     // DIRECTION 
+    
 
-    if (cursors.left.isDown){
+    if (cursors.left.isDown || controller.left || leftStick().x < -0.2){
         if (playerCanLeft) {
             player.setVelocityX(-playerSpeed); //si la touche gauche est appuyée //alors vitesse négative en X
         } 
         player.anims.play('left', true); //et animation => gauche
     }
-    else if (cursors.right.isDown){ //sinon si la touche droite est appuyée
+    else if (cursors.right.isDown || controller.right || leftStick().x > 0.2){ //sinon si la touche droite est appuyée
         if (playerCanRight) {
             player.setVelocityX(playerSpeed); //alors vitesse positive en X
         }
@@ -544,8 +552,11 @@ function update(){
         ennemiCanJump = true;
     }
 
+    //console.log("controller",controller.A);
+    console.log("canJump",playerCanJump);
+
     //Joueur
-    if(cursors.up.isUp && playerCanJump==false){
+    if((cursors.up.isUp && (!controller.A || controller == false )) && playerCanJump==false){
         playerCanJump = true;
     }
 
@@ -557,7 +568,7 @@ function update(){
             player.anims.play('jumpLeft')
         }
     }
-    if (cursors.up.isDown && player.body.blocked.down && playerCanJump){
+    if ((cursors.up.isDown || controller.A) && player.body.blocked.down && playerCanJump){
         //si touche haut appuyée ET que le perso touche le sol
         //(on saute)
         jump();
@@ -565,7 +576,7 @@ function update(){
 
     // WALLJUMP
 
-    if (player.body.onWall() && !player.body.blocked.down && (playerGetSlime == false || !keySpace.isDown)){                //Si le joueur est contre un mur
+    if (player.body.onWall() && !player.body.blocked.down && (playerGetSlime == false || (keySpace.isUp && (!controller.X || controller == false )))){                //Si le joueur est contre un mur
 
         player.setVelocityY(50);
         if (player.body.blocked.right){
@@ -575,7 +586,7 @@ function update(){
             player.anims.play('wallLeft')
         }
 
-        if(cursors.up.isDown && playerCanJump){                      //Et qu'il appuit sur SAUTER,
+        if((cursors.up.isDown || controller.A) && playerCanJump){                      //Et qu'il appuit sur SAUTER,
             jump();
             if(customPlayerBound.blocked.right){
                 player.setVelocityX(-100);
@@ -601,12 +612,12 @@ function update(){
 
     // ESCALADE
 
-    if (player.body.onWall() && (playerGetSlime == true && keySpace.isDown)){       //Si le joueur est contre un mur et appuyer sur SPACE
+    if (player.body.onWall() && (playerGetSlime == true && (keySpace.isDown || controller.X))){       //Si le joueur est contre un mur et appuyer sur SPACE
 
-        if(cursors.up.isDown){
+        if(cursors.up.isDown || leftStick().y < -0.2){
             player.setVelocityY(-75);
         }
-        else if(cursors.down.isDown){
+        else if(cursors.down.isDown || leftStick().y > 0.2){
             player.setVelocityY(175);
         }
         else{
@@ -726,5 +737,14 @@ function ennemiCollide(player, ennemi){
     else {
         playerLife = 0;
         gameOver = true;
+    }
+}
+
+function leftStick(){
+    if(controller != false){
+        return {x: controller.leftStick.x, y: controller.leftStick.y};
+    }
+    else {
+        return {x: 0, y: 0};
     }
 }
