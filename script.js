@@ -5,7 +5,7 @@ var config = {
         default: 'arcade',
         arcade: {
         gravity: { y: 1000 },
-        debug: false
+        debug: true
     }},
     scene: {preload: preload, create: create, update: update }
 };
@@ -29,8 +29,12 @@ function preload(){
     this.load.image('background',"assets/images/BackgroundSansPlateforme.png");
 
     //Load SpritSheet
+    this.load.spritesheet('ecurat','assets/images/EcuratSprite.png',
+    { frameWidth: 128, frameHeight: 160 });
+
     this.load.spritesheet('perso','assets/images/persoSpritesTest.png',
     { frameWidth: 128, frameHeight: 241 });
+
     this.load.spritesheet('water','assets/images/waterSprite.png',
     { frameWidth: 32, frameHeight: 32 });
 
@@ -57,14 +61,15 @@ var playerCanRight = true;
 var playerCanJump = true;
 var playerGetSlime = false;
 
+var ennemi;
+var ennemiCanJump = true;
+
 var cursors;
 var cameras;
 var scoreText;
 var score = 0;
 
 let keySpace;
-
-
 
 var gameOver = false;
 
@@ -99,8 +104,9 @@ function create(){
     );
     calque_waterPlateformes.alpha = 0.5;
 
-    //create player
-    player = this.physics.add.sprite(50, 900, 'perso').setScale(0.25);
+    //create player et ennemis 
+    player = this.physics.add.sprite(50, 950, 'perso').setScale(0.25);
+    ennemi = this.physics.add.sprite(825, 1200, 'ecurat').setScale(0.25);
 
     customPlayerBound = player.body.setBoundsRectangle((0,0,player.body.height,player.body.halfHeight));
     //customPlayerBound = player.body.setBoundsRectangle((0,0,1600,1600));
@@ -225,8 +231,8 @@ function create(){
 
     //affichage ui
     lifeUI = this.add.sprite(0,0, 'lifeUI').setOrigin(0,0).setScrollFactor(0);
-    this.add.sprite(0,0,'mainPv').setOrigin(0,0).setScrollFactor(0);
-    this.add.sprite(0,0,'uiCoin').setOrigin(0,0).setScrollFactor(0);
+    mainPv = this.add.sprite(0,0,'mainPv').setOrigin(0,0).setScrollFactor(0);
+    uiCoin = this.add.sprite(0,0,'uiCoin').setOrigin(0,0).setScrollFactor(0);
     scoreText=this.add.text(16,185,'0',{fontSize:'32px',fill:'#FFD700'}).setScrollFactor(0);
 
     // Collision des plateformes
@@ -243,6 +249,9 @@ function create(){
     // Faire en sorte que le joueur collide avec les platformes et les piques
     this.physics.add.collider(player, calque_plateformes);
     this.physics.add.collider(player, calque_piques, spikeDamage, null, this);
+    this.physics.add.collider(player, ennemi, ennemiCollide, null, this);
+
+    this.physics.add.collider(ennemi, calque_plateformes);
     
 
     // Animation Vie
@@ -320,8 +329,22 @@ function create(){
     });
 
     this.anims.create({
-        key: 'climLeft',
+        key: 'climbLeft',
         frames: [ { key: 'perso', frame: 10 } ],
+        frameRate: 20
+    });
+
+    // Animation Ennemi
+    this.anims.create({
+        key: 'ecuratJump',
+        frames: this.anims.generateFrameNumbers('ecurat', {start:1,end:2}),
+        frameRate: 8
+        //repeat: -1
+    });
+
+    this.anims.create({
+        key: 'ecuratIdle',
+        frames: [ { key: 'ecurat', frame: 0 } ],
         frameRate: 20
     });
 
@@ -380,19 +403,46 @@ function create(){
 
 function update(){
 
-    if(!this.physics.overlap(player,eauDroite) && 
-        !this.physics.overlap(player,eauStagBordBot) && 
-        !this.physics.overlap(player,eauStagBordTop) &&
-        !this.physics.overlap(player,eauStagBot) &&
-        !this.physics.overlap(player,eauStagTop) &&
-        !this.physics.overlap(player,eauBasTop) &&
-        !this.physics.overlap(player,eauBasBot)) {
-            playerSpeed = 200;
-            playerJump = 400;
-        };
+    if(playerLife == 0 || (player.body.position.x > 1600 && player.body.position.y < 100)){
+        gameOver = true; 
+    }
 
-    if (gameOver){return;}
+    if(player.body.position.x < -32){
+        player.body.position.x = 50;
+        player.body.position.y = 950;
+        if(typeof out !== 'undefined' && typeof texteout !== 'undefined'){
+            out.destroy();
+            texteout.destroy();
+        }
+        out=this.add.text(150,30,'Hop Hop Hop !',{fontSize:'50px',fill:'#ffffff'}).setScrollFactor(0);
+        texteout=this.add.text(150,80,"Où est ce que vous allez comme ça c'est pas par là !",{fontSize:'20px',fill:'#ffffff'}).setScrollFactor(0);
 
+        this.time.delayedCall(2000, () => {
+            out.destroy();
+            texteout.destroy();
+        });
+
+    }
+
+    if(player.body.position.x > 1400 && player.body.position.y >1600){
+        playerLife = 0;
+        gameOver = true; 
+    }
+
+    if (gameOver){
+        if(playerLife == 0){
+            playerLife = 3;
+            gameOver = false;
+            this.scene.restart();
+        }
+        else {
+            player.disableBody(true,true);
+            win=this.add.text(150,30,'Vous avez gagnez !',{fontSize:'50px',fill:'#FFD700'}).setScrollFactor(0);
+            texteWin=this.add.text(150,80,'Bravo, vous avez terminé le niveau, recharger la page pour recommencer.',{fontSize:'20px',fill:'#FFD700'}).setScrollFactor(0);
+        }
+    }
+
+    
     
     // ANIMATIONS
 
@@ -407,7 +457,32 @@ function update(){
         lifeUI.anims.play('lowLife', true);
     }
 
+    if(!this.physics.overlap(player,eauDroite) && 
+        !this.physics.overlap(player,eauStagBordBot) && 
+        !this.physics.overlap(player,eauStagBordTop) &&
+        !this.physics.overlap(player,eauStagBot) &&
+        !this.physics.overlap(player,eauStagTop) &&
+        !this.physics.overlap(player,eauBasTop) &&
+        !this.physics.overlap(player,eauBasBot)) {
+            playerSpeed = 200;
+            playerJump = 400;
+        };
+
+    if(player.body.position.x < 120 && player.body.position.y < 800){   //Si le joueur rentre dans l'UI, elle est masqué
+        lifeUI.setAlpha(0.25);
+        mainPv.setAlpha(0.25);
+        uiCoin.setAlpha(0.25);
+        scoreText.setAlpha(0.25);
+    }
+    else{
+        lifeUI.setAlpha(1);
+        mainPv.setAlpha(1);
+        uiCoin.setAlpha(1);
+        scoreText.setAlpha(1);
+    }
+
     // Animation Water 
+
     animWaterBasBot.forEach(water => {
         water.anims.play('eauBasBot',true);
     });
@@ -463,6 +538,13 @@ function update(){
 
     // SAUT
 
+    //Ennemi
+    if(ennemi.body.blocked.down){
+        ennemi.anims.play('ecuratIdle');
+        ennemiCanJump = true;
+    }
+
+    //Joueur
     if(cursors.up.isUp && playerCanJump==false){
         playerCanJump = true;
     }
@@ -477,9 +559,8 @@ function update(){
     }
     if (cursors.up.isDown && player.body.blocked.down && playerCanJump){
         //si touche haut appuyée ET que le perso touche le sol
-        player.setVelocityY(-playerJump); //alors vitesse verticale négative
         //(on saute)
-        playerCanJump = false;
+        jump();
     }
 
     // WALLJUMP
@@ -495,8 +576,7 @@ function update(){
         }
 
         if(cursors.up.isDown && playerCanJump){                      //Et qu'il appuit sur SAUTER,
-            player.setVelocityY(-playerJump);
-            playerCanJump = false;
+            jump();
             if(customPlayerBound.blocked.right){
                 player.setVelocityX(-100);
                 playerCanRight = false;
@@ -617,4 +697,34 @@ function inWater(){
 
 function inWaterRight(){
     player.body.position.x+=1;
+}
+
+function jump(){
+
+    player.setVelocityY(-playerJump);
+    playerCanJump = false;
+
+    if(ennemiCanJump && (
+        Math.sqrt(                                                      // On vérifie ici si le joueur se trouve
+            Math.pow(                                                   // à moins de 100 pixels de l'ennemi
+                player.body.position.x - ennemi.body.position.x,2)+
+            Math.pow(
+                player.body.position.y - ennemi.body.position.y,2)
+        )) < 100){
+        ennemi.setVelocityY(-playerJump-50);
+        ennemiCanJump = false;
+        ennemi.anims.play('ecuratJump');
+    }
+    
+}
+
+function ennemiCollide(player, ennemi){
+    if (player.body.touching.down) {
+        ennemi.disableBody(true, true);
+        player.setVelocityY(-playerJump);
+    }
+    else {
+        playerLife = 0;
+        gameOver = true;
+    }
 }
