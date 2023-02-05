@@ -25,9 +25,12 @@ function preload(){
     this.load.image('slimeItem',"assets/images/slimeItemPixel.png");
 
     //Load Background images
-    this.load.image('forground',"assets/images/ForgroundSansPlateform.png");
-    this.load.image('sunLight',"assets/images/LightSun.png");
-    this.load.image('background',"assets/images/BackgroundSansPlateforme.png");
+    this.load.image('devant',"assets/images/backgrounds/devant.png");
+    this.load.image('solaire',"assets/images/backgrounds/solaire.png");
+    this.load.image('fondBat',"assets/images/backgrounds/fondBat.png");
+    this.load.image('montagneLoin',"assets/images/backgrounds/montagneLoin.png");
+    this.load.image('montagnePret',"assets/images/backgrounds/montagnePret.png");
+    this.load.image('fondfond',"assets/images/backgrounds/fondfond.png");
 
     //Load SpritSheet
     this.load.spritesheet('ecurat','assets/images/EcuratSprite.png',
@@ -91,9 +94,12 @@ function create(){
         "Phaser_tuilesdejeu"
     );
 
-    // Chargement des calques et des images
+    // Chargement des différents background avec parralax 
 
-    this.add.image(0,0,'background').setOrigin(0,0);
+    this.add.image(0,0,'fondfond').setOrigin(0,0);
+    this.add.tileSprite(0,0,1600,1600,'montagneLoin').setOrigin(0,0).setScrollFactor(0.82,1);
+    this.add.tileSprite(0,0,1600,1600,'montagnePret').setOrigin(0,0).setScrollFactor(0.65,1);
+    this.add.image(0,0,'fondBat').setOrigin(0,0);
 
     calque_plateformes = carteDuNiveau.createLayer(
         "Plateformes",
@@ -109,15 +115,6 @@ function create(){
     //create player et ennemis 
     player = this.physics.add.sprite(50, 950, 'perso').setScale(0.25);
     ennemi = this.physics.add.sprite(825, 1200, 'ecurat').setScale(0.25);
-
-    customPlayerBound = player.body.setBoundsRectangle((0,0,player.body.height,player.body.halfHeight));
-    //customPlayerBound = player.body.setBoundsRectangle((0,0,1600,1600));
-    console.log(customPlayerBound);
-
-    //set camera
-    cameras.startFollow(player);
-    cameras.setDeadzone(100,100);
-    cameras.setBounds(0,0,1600,1600);
 
     calque_murs = carteDuNiveau.createLayer(
         "Murs Accrochable / Cotes Nuages",
@@ -218,7 +215,7 @@ function create(){
         tileset
     );
 
-    (this.add.image(0,0,'forground').setOrigin(0,0)).alpha = 0.22;
+    (this.add.image(0,0,'devant').setOrigin(0,0)).alpha = 0.22;
 
     calque_structure = carteDuNiveau.createLayer(
         "Structure",
@@ -229,7 +226,12 @@ function create(){
     slimeItem.create(480,1250, "slimeItem").body.setAllowGravity(false);
     this.physics.add.overlap(player,slimeItem,getSlimeItem,null,this);
 
-    (this.add.image(0,0,'sunLight').setOrigin(0,0)).alpha = 0.17;
+    (this.add.image(0,0,'solaire').setOrigin(0,0)).alpha = 0.17;
+    
+    //set camera
+    cameras.startFollow(player);
+    cameras.setDeadzone(100,100);
+    cameras.setBounds(0,0,1600,1600);
 
     //affichage ui
     lifeUI = this.add.sprite(0,0, 'lifeUI').setOrigin(0,0).setScrollFactor(0);
@@ -248,10 +250,7 @@ function create(){
     // Création de la détéction de la manette 
     this.input.gamepad.once('connected', function (manette) {
         controller = manette;
-      });
-
-    // Faire en sorte que le joueur collide avec les bords du monde
-    player.setCollideWorldBounds(true);
+    });
 
     // Faire en sorte que le joueur collide avec les platformes et les piques
     this.physics.add.collider(player, calque_plateformes);
@@ -284,7 +283,7 @@ function create(){
     })
 
 
-    // Animation Personnage
+    // Animations Personnage
     this.anims.create({
         key: 'left',
         frames: this.anims.generateFrameNumbers('perso', {start:1,end:2}),
@@ -341,12 +340,11 @@ function create(){
         frameRate: 20
     });
 
-    // Animation Ennemi
+    // Animations Ennemi
     this.anims.create({
         key: 'ecuratJump',
         frames: this.anims.generateFrameNumbers('ecurat', {start:1,end:2}),
         frameRate: 8
-        //repeat: -1
     });
 
     this.anims.create({
@@ -410,10 +408,13 @@ function create(){
 
 function update(){
 
+
+    // Si le joueur arrive en haut du niveau c'est gagné !
     if(playerLife == 0 || (player.body.position.x > 1600 && player.body.position.y < 100)){
         gameOver = true; 
     }
 
+    // Si le joueur sort par la gauche au début il est remis au début 
     if(player.body.position.x < -32){
         player.body.position.x = 50;
         player.body.position.y = 950;
@@ -431,11 +432,13 @@ function update(){
 
     }
 
+    // Si le joueur se fait emporté par l'eau dans le trou, il meurt et recommence...
     if(player.body.position.x > 1400 && player.body.position.y >1600){
         playerLife = 0;
         gameOver = true; 
     }
 
+    // Si le joueur est gameOver, on vérifie si c'est gagné ou perdu et on agit en conséquence
     if (gameOver){
         if(playerLife == 0){
             playerLife = 3;
@@ -449,8 +452,18 @@ function update(){
         }
     }
 
-    
-    
+    // Si le joueur est pas dans l'eau, alors sa vitesse et son saut sont reset
+    if(!this.physics.overlap(player,eauDroite) && 
+        !this.physics.overlap(player,eauStagBordBot) && 
+        !this.physics.overlap(player,eauStagBordTop) &&
+        !this.physics.overlap(player,eauStagBot) &&
+        !this.physics.overlap(player,eauStagTop) &&
+        !this.physics.overlap(player,eauBasTop) &&
+        !this.physics.overlap(player,eauBasBot)) {
+            playerSpeed = 200;
+            playerJump = 400;
+    };
+
     // ANIMATIONS
 
     // Animation Vie
@@ -463,19 +476,9 @@ function update(){
     if (playerLife == 1){
         lifeUI.anims.play('lowLife', true);
     }
-
-    if(!this.physics.overlap(player,eauDroite) && 
-        !this.physics.overlap(player,eauStagBordBot) && 
-        !this.physics.overlap(player,eauStagBordTop) &&
-        !this.physics.overlap(player,eauStagBot) &&
-        !this.physics.overlap(player,eauStagTop) &&
-        !this.physics.overlap(player,eauBasTop) &&
-        !this.physics.overlap(player,eauBasBot)) {
-            playerSpeed = 200;
-            playerJump = 400;
-        };
-
-    if(player.body.position.x < 120 && player.body.position.y < 800){   //Si le joueur rentre dans l'UI, elle est masqué
+    
+    // Si le joueur rentre dans l'UI, elle est masqué
+    if(player.body.position.x < 120 && player.body.position.y < 800){   
         lifeUI.setAlpha(0.25);
         mainPv.setAlpha(0.25);
         uiCoin.setAlpha(0.25);
@@ -519,47 +522,49 @@ function update(){
     });
     
     
-    // DIRECTION 
+    // DIRECTIONS
     
-
+    // Si le joueur appuye sur la touche gauche (ou stick mannete vers la gauche), alors il va à gauche
     if (cursors.left.isDown || controller.left || leftStick().x < -0.2){
         if (playerCanLeft) {
-            player.setVelocityX(-playerSpeed); //si la touche gauche est appuyée //alors vitesse négative en X
+            player.setVelocityX(-playerSpeed); 
         } 
-        player.anims.play('left', true); //et animation => gauche
+        player.anims.play('left', true); 
     }
-    else if (cursors.right.isDown || controller.right || leftStick().x > 0.2){ //sinon si la touche droite est appuyée
+    // Sinon si la touche droite est appuyée (ou stick mannete vers la droite), alors il va à droite
+    else if (cursors.right.isDown || controller.right || leftStick().x > 0.2){ 
         if (playerCanRight) {
-            player.setVelocityX(playerSpeed); //alors vitesse positive en X
+            player.setVelocityX(playerSpeed);
         }
-        player.anims.play('right', true); //et animation => droite
+        player.anims.play('right', true);
     }
-    else{ // sinon
+    // Sinon il ne bouge pas
+    else{ 
         player.setVelocityX(0); //vitesse nulle
         player.anims.play('turn'); //animation fait face caméra
     }
 
-    if(player.body.velocity.y>1000){    // On évite que le joueur n'aille trop vite en tombant
-        player.setVelocityY(1000);      // a cause de bugs de collision
+    // On évite que le joueur n'aille trop vite en tombant a cause de bugs de collision
+    if(player.body.velocity.y>1000){    
+        player.setVelocityY(1000);    
     }
-
 
     // SAUT
 
     //Ennemi
+    // Si l'ennemi touche le sol, alors il peut à nouveau sauter  
     if(ennemi.body.blocked.down){
         ennemi.anims.play('ecuratIdle');
         ennemiCanJump = true;
     }
 
-    //console.log("controller",controller.A);
-    console.log("canJump",playerCanJump);
-
     //Joueur
+    // Si le joueur lache sa touche saut, alors il peut à nouveau sauter 
     if((cursors.up.isUp && (!controller.A || controller == false )) && playerCanJump==false){
         playerCanJump = true;
     }
 
+    // Si le joueur est en l'air, alors on déclenche les annimations de saut correspondant
     if (!player.body.blocked.down){
         if (cursors.right.isDown){
             player.anims.play('jumpRight')
@@ -568,36 +573,39 @@ function update(){
             player.anims.play('jumpLeft')
         }
     }
+
+    // Si le joueur peut sauter et qu'il appuye sur sa touche saut, il saute
     if ((cursors.up.isDown || controller.A) && player.body.blocked.down && playerCanJump){
-        //si touche haut appuyée ET que le perso touche le sol
-        //(on saute)
         jump();
     }
 
     // WALLJUMP
-
+    // Si le joueur est contre un mur, et qu'il n'a pas les gants de slime ou qu'il n'appuye pas sur Espace ou X, alors il glisse doucement contre le mur
     if (player.body.onWall() && !player.body.blocked.down && (playerGetSlime == false || (keySpace.isUp && (!controller.X || controller == false )))){                //Si le joueur est contre un mur
-
         player.setVelocityY(50);
+
+        // Si bloquer droite, alors animation contre le mur droit
         if (player.body.blocked.right){
             player.anims.play('wallRight')
         }
+        // Sinon si bloquer gauche, alors animation contre le mur gauche
         else if (player.body.blocked.left){
             player.anims.play('wallLeft')
         }
 
-        if((cursors.up.isDown || controller.A) && playerCanJump){                      //Et qu'il appuit sur SAUTER,
+        //Si il appuye su sa touche saut, il est repoussé du mur et il saute sans qu'il puisse retourné sur ce même mur tout de suite
+        if((cursors.up.isDown || controller.A) && playerCanJump){
             jump();
-            if(customPlayerBound.blocked.right){
+            if(player.body.blocked.right){
                 player.setVelocityX(-100);
                 playerCanRight = false;
 
                 this.time.delayedCall(250, () => {
                     playerCanRight = true;
                 });
-            }                                       // Il est repoussé dans la direction opposé et ne
-            if(customPlayerBound.blocked.left){     // et ne peut qu'aller dans cette dernière pendant
-                player.setVelocityX(100);           // un certain temps court
+            }              
+            if(player.body.blocked.left){     
+                player.setVelocityX(100);           
                 playerCanLeft = false;
 
                 this.time.delayedCall(250, () => {
@@ -606,17 +614,21 @@ function update(){
             }
         }
     }
+
+    // Si il n'est pas sur un mur, sa vitesse verticale est remis à 100
     else {
         player.body.setGravityY(100);
     }
 
     // ESCALADE
-
+    // Si le joueur est contre un mur est qu'il appuye sur la touche Escalade, alors il s'accroche au mur
     if (player.body.onWall() && (playerGetSlime == true && (keySpace.isDown || controller.X))){       //Si le joueur est contre un mur et appuyer sur SPACE
 
+        // Il peux monter
         if(cursors.up.isDown || leftStick().y < -0.2){
             player.setVelocityY(-75);
         }
+        // Ou descendre
         else if(cursors.down.isDown || leftStick().y > 0.2){
             player.setVelocityY(175);
         }
@@ -624,13 +636,17 @@ function update(){
             player.setVelocityY(0);
             player.body.setAllowGravity(false);
         }
+
+        // Animations sur un mur droit
         if (player.body.blocked.right){
             player.anims.play('climbRight')
         }
+        // Animations sur un mur gauche
         else if (player.body.blocked.left){
             player.anims.play('climbLeft')
         }
     }
+    // Reset gravité et vitesse verticale
     else {
         player.body.setGravityY(100);
         player.body.setAllowGravity(true);
@@ -638,6 +654,7 @@ function update(){
 
 }
 
+// Fonction permettant au joueur de prendre des dégats sur les piques
 function spikeDamage(){
 
     // Cooldown entre chaque dégat
@@ -682,12 +699,14 @@ function spikeDamage(){
     
 }
 
+// Fonction permettant de récuperer les pièces
 function getCoin(player, coin){
     coin.disableBody(true,true);
     score += 1;
     scoreText.text = score;
 }
 
+// Fonction permettant de récuperer l'item "Gant de Slime"
 function getSlimeItem(player, slimeItem){
     slimeItem.disableBody(true,true);
     playerGetSlime = true;
@@ -701,15 +720,18 @@ function getSlimeItem(player, slimeItem){
     });
 }
 
+// Fonction qui agit si le joueur est dans l'eau
 function inWater(){
     playerSpeed= 125;
     playerJump= 300;
 }
 
+// Fonction qui agit si le joueur est dans le courant
 function inWaterRight(){
     player.body.position.x+=1;
 }
 
+// Fonction permettant au joueur de sauter (et la réaction de l'ennemi)
 function jump(){
 
     player.setVelocityY(-playerJump);
@@ -729,6 +751,7 @@ function jump(){
     
 }
 
+// Fonction gérant la collision entre le joueur et l'ennemi
 function ennemiCollide(player, ennemi){
     if (player.body.touching.down) {
         ennemi.disableBody(true, true);
@@ -740,6 +763,7 @@ function ennemiCollide(player, ennemi){
     }
 }
 
+// Fonction permettant de géréer le stick analogue gauche de la manette
 function leftStick(){
     if(controller != false){
         return {x: controller.leftStick.x, y: controller.leftStick.y};
